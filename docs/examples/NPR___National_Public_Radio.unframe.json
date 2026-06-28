@@ -1,0 +1,177 @@
+{
+  "id": "c9a74369-6007-4302-94a8-b476f8409a0a",
+  "model_version": "0.1.0",
+  "source": {
+    "requested_url": "https://text.npr.org/",
+    "final_url": "https://text.npr.org/",
+    "retrieved_at": "2026-06-28T10:57:08.635487600Z",
+    "content_type": "text/html",
+    "charset": "utf-8",
+    "charset_source": "http-header"
+  },
+  "metadata": {
+    "title": "NPR : National Public Radio",
+    "description": null,
+    "author": null,
+    "published_at": null,
+    "language": "en",
+    "canonical_url": null
+  },
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "NPR : National Public Radio",
+      "id": "npr-national-public-radio"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sunday, June 28, 2026"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        {
+          "type": "list_item",
+          "text": "\"If you are alive, make any noise\": Venezuela searches rubble on day four",
+          "href": "https://text.npr.org/nx-s1-5873413",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "U.S. and Iran each announce retaliatory strikes in Iran, Kuwait and Bahrain",
+          "href": "https://text.npr.org/nx-s1-5872954",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Food defined social hierarchy in 1776. Here's what was on the table",
+          "href": "https://text.npr.org/nx-s1-5843114",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Inside a secretive Ukrainian team launching deep drone strikes at Russia",
+          "href": "https://text.npr.org/g-s1-129704",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "How coach Mauricio Pochettino made believers out of the U.S. World Cup team",
+          "href": "https://text.npr.org/nx-s1-5872818",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Onto the knockout round: 4 takeaways from the FIFA World Cup so far",
+          "href": "https://text.npr.org/nx-s1-5872241",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Will the new student loan limits actually drive down tuition? Economists weigh in",
+          "href": "https://text.npr.org/nx-s1-5805988",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Pete Buttigieg and his kids subject to CPS, police investigation after false report",
+          "href": "https://text.npr.org/nx-s1-5872821",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "In a first since Trump deployed the guard to D.C., Democrats are sending troops",
+          "href": "https://text.npr.org/nx-s1-5871231",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "She posted about ICE. Five months later, DHS agents told her to take her post down",
+          "href": "https://text.npr.org/nx-s1-5871369",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "As Supreme Court expands Trump's immigration power, experts warn of steeper U.S. population decline",
+          "href": "https://text.npr.org/nx-s1-5871338",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Venezuelans in Colombia scramble to send aid as earthquakes death toll increases",
+          "href": "https://text.npr.org/nx-s1-5872951",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Uzbekistan makes its World Cup debut, a first for Central Asia",
+          "href": "https://text.npr.org/g-s1-129705",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Critical fire weather complicates firefighting efforts in massive Utah wildfire",
+          "href": "https://text.npr.org/nx-s1-5873445",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "5 million have dropped ACA insurance after Trump and the GOP let prices skyrocket",
+          "href": "https://text.npr.org/nx-s1-5860746",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "A day after Alito's testy response to Sotomayor's dissent, court says it was a 'misunderstanding'",
+          "href": "https://text.npr.org/nx-s1-5872721",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "This mindset shift can help you get better at using up your leftovers",
+          "href": "https://text.npr.org/nx-s1-5786564",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "What would George Washington say? It's a busy year for people who portray him",
+          "href": "https://text.npr.org/nx-s1-5816415",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "If a Lyme disease vaccine gets approved, how would it go over? We asked hunters",
+          "href": "https://text.npr.org/nx-s1-5859907",
+          "children": []
+        },
+        {
+          "type": "list_item",
+          "text": "Amateurs now conduct most weddings. Here is some basic advice",
+          "href": "https://text.npr.org/nx-s1-5865047",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "outline": [
+    {
+      "level": 1,
+      "text": "NPR : National Public Radio",
+      "block_index": 0
+    }
+  ],
+  "audit": {
+    "total_requests": 1,
+    "total_bytes": 6108,
+    "redirect_count": 0,
+    "blocked_count": 0,
+    "scripts_discovered": 0,
+    "scripts_executed": 0,
+    "third_party_requests": 0,
+    "adapter_name": "GenericHtmlAdapter",
+    "adapter_version": "0.1.0"
+  },
+  "warnings": []
+}
