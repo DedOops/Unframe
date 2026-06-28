@@ -1,0 +1,110 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install MinGW-w64 via MSYS2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: false
+          install: mingw-w64-x86_64-gcc
+
+      - name: Configure Cargo linker
+        run: |
+          $gcc = (Get-Command gcc -ErrorAction Stop).Source
+          $dir = (Split-Path $gcc -Parent) -replace '\\', '/'
+          New-Item -ItemType Directory -Force -Path .cargo | Out-Null
+          @"
+          [build]
+          target = "x86_64-pc-windows-gnu"
+
+          [target.x86_64-pc-windows-gnu]
+          linker = "$dir/gcc.exe"
+          ar     = "$dir/ar.exe"
+          rustflags = ["-C", "dlltool=$dir/dlltool.exe"]
+          "@ | Out-File -FilePath .cargo/config.toml -Encoding utf8
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable-x86_64-pc-windows-gnu
+          components: rustfmt, clippy
+
+      - name: Cache cargo registry
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Build
+        run: cargo build --workspace
+
+      - name: Test
+        run: cargo test --workspace
+
+  release-build:
+    name: Release build
+    runs-on: windows-latest
+    needs: build-test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install MinGW-w64 via MSYS2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: false
+          install: mingw-w64-x86_64-gcc
+
+      - name: Configure Cargo linker
+        run: |
+          $gcc = (Get-Command gcc -ErrorAction Stop).Source
+          $dir = (Split-Path $gcc -Parent) -replace '\\', '/'
+          New-Item -ItemType Directory -Force -Path .cargo | Out-Null
+          @"
+          [build]
+          target = "x86_64-pc-windows-gnu"
+
+          [target.x86_64-pc-windows-gnu]
+          linker = "$dir/gcc.exe"
+          ar     = "$dir/ar.exe"
+          rustflags = ["-C", "dlltool=$dir/dlltool.exe"]
+          "@ | Out-File -FilePath .cargo/config.toml -Encoding utf8
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable-x86_64-pc-windows-gnu
+
+      - name: Build release
+        run: cargo build --release -p unframe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: unframe-windows-x64
+          path: target/x86_64-pc-windows-gnu/release/unframe.exe

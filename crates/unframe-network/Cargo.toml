@@ -1,0 +1,15 @@
+[package]
+name = "unframe-network"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+unframe-model = { path = "../unframe-model" }
+tokio = { workspace = true }
+reqwest = { workspace = true }
+bytes = { workspace = true }
+url = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

@@ -1,0 +1,53 @@
+[workspace]
+members = [
+    "crates/unframe-model",
+    "crates/unframe-network",
+    "crates/unframe-parser",
+    "crates/unframe-adapter-html",
+    "crates/unframe-renderer",
+    "app",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Unframe Contributors"]
+
+[workspace.dependencies]
+# async
+tokio = { version = "1", features = ["full"] }
+# http
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "gzip", "brotli", "deflate"] }
+bytes = "1"
+# html
+scraper = "0.21"
+# url
+url = "2"
+# serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# time
+chrono = { version = "0.4", features = ["serde"] }
+# ids
+uuid = { version = "1", features = ["v4"] }
+# encoding
+encoding_rs = "0.8"
+# logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+# errors
+thiserror = "2"
+anyhow = "1"
+# gui
+egui = "0.29"
+eframe = { version = "0.29", default-features = false, features = ["default_fonts", "glow"] }
+open = "5"
+rfd = "0.15"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

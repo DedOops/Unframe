@@ -1,0 +1,19 @@
+[package]
+name = "unframe-adapter-html"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+unframe-model = { path = "../unframe-model" }
+unframe-network = { path = "../unframe-network" }
+unframe-parser = { path = "../unframe-parser" }
+url = { workspace = true }
+bytes = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }

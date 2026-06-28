@@ -1,0 +1,25 @@
+# Build artifacts
+/target/
+
+# Local Cargo config (machine-specific linker paths)
+/.cargo/
+
+# Local development (tech notes, mockups)
+/.local/
+.gitattributes
+
+# Claude Code local session settings (personal, not for repo)
+/.claude/
+
+# Claude plan files (generated in working directory)
+mimo-plan-*.md
+
+# OS artifacts
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor temp files
+*.orig
+*.swp
+*~

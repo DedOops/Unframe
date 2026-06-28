@@ -1,0 +1,12 @@
+[package]
+name = "unframe-parser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+url = { workspace = true }
+scraper = { workspace = true }
+chrono = { workspace = true }
+encoding_rs = { workspace = true }
+tracing = { workspace = true }
